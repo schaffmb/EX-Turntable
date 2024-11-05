@@ -12,7 +12,8 @@ The integration includes:
 
 - I2C device driver
 - EXRAIL automation support
+- Sound effects
 - Interactive commands via the serial console for debugging and testing
 - Out-of-the-box support for several common stepper motor drivers
-- DCC signal phase switching to align bridge track phase with layout phase
-- Operates in either turntable or traverser mode
+- DCC signal auto reverser to align bridge track phase with layout phase
+- Operates in either turntable, traverser, or swing bridge mode
