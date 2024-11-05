@@ -1,8 +1,13 @@
 #ifndef version_h
 #define version_h
 
-#define VERSION "0.7.0"
+#define SIGNATURE   "DCCEXTT\0"
+#define VERSION     "0.8.0\0"
 
+// 0.8.0:
+//  - Refactored project
+//  - Implemented state machine for stepper operation
+//  - Add interactive sound FX
 // 0.7.0:
 //  - Fix bug where enabling sensor testing prevents compiling
 //  - Add interactive serial command C to initiate calibration

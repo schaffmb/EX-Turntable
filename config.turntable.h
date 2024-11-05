@@ -15,7 +15,7 @@
 //  TRAVERSER : Use this for vertical or horizontal traversers, or turntables that do
 //              do not rotate a full 360 degrees.
 // 
-#define TURNTABLE_EX_MODE   TRAVERSER
+#define TURNTABLE_EX_MODE TURNTABLE
 
 /////////////////////////////////////////////////////////////////////////////////////
 //  Enable sensor testing only, prevents all Turntable-EX operations.
@@ -58,7 +58,7 @@
 //  Refer to the documentation for the full explanation on phase switching, and when
 //  it is recommended to change these options.
 // 
-#define PHASE_SWITCHING MANUAL
+#define PHASE_SWITCHING AUTO
 
 /////////////////////////////////////////////////////////////////////////////////////
 //  Define automatic phase switching angle.
@@ -73,27 +73,25 @@
 // 
 #define PHASE_SWITCH_ANGLE 45
 
-///////////////////////////////////////////////////////////////////////////////
-//  Define the stepper controller in use according to those available below,
-//  refer to the documentation for further details on which to select for your
-//  application.
+/////////////////////////////////////////////////////////////////////////////////////
+//  Define the stepper controller in use according to those available below, refer to the
+//  documentation for further details on which to select for your application.
 // 
-//  ULN2003_HALF  : ULN2003 in half step mode
-//  ULN2003_FULL  : ULN2003 in full step mode
+//  ULN2003_HALF  : ULN2003 in half step mode, clockwise
+//  ULN2003_FULL  : ULN2003 in full step mode, clockwise
 //  A4988         : Two wire drivers (eg. A4988, DRV8825, TMC2208)
+//  I2C_SHIELD    : I2C Stepper shield
 // 
-//  NOTE:
-//      If you are using a different controller than those already defined,
-//      refer to the documentation to define the appropriate configuration
-//      variables. Note there are some controllers that are pin-compatible
-//      with an existing defined controller, and in those instances, no
-//      custom configuration would be required.
+//  NOTE: If you are using a different controller than those already defined, refer to
+//  the documentation to define the appropriate configuration variables. Note there are
+//  some controllers that are pin-compatible with an existing defined controller, and
+//  in those instances, no custom configuration would be required.
 // 
 
-#define DCCEX_SM_DRIVER         ULN2003_HALF
-// #define DCCEX_SM_DRIVER         ULN2003_FULL
-// #define DCCEX_SM_DRIVER         A4988
-// #define DCCEX_SM_DRIVER         I2C_SHIELD
+#define DCCEX_SM_DRIVER   ULN2003_HALF
+// #define DCCEX_SM_DRIVER   ULN2003_FULL
+// #define DCCEX_SM_DRIVER   A4988
+// #define DCCEX_SM_DRIVER   I2C_SHIELD
 // 
 // When using a two wire driver (eg. A4988, DRV8825, TMC2208), it may be necessary to invert
 // the direction pin. This is likely required when using a TMC2208. This has no effect on
@@ -123,6 +121,7 @@
 // If using a gearing or microstep setup with larger than 32767 steps, you need to set the
 // gearing factor appropriately.
 // Step counts sent from EX-CommandStation will be multiplied by this number.
+#define DCCEX_SM_FULLSTEPS      4096  // Default value
 #define DCCEX_SM_DRIVERTOOTH    20
 #define DCCEX_SM_PLATFORMTOOTH  120
 #define DCCEX_SM_GEARING        1
